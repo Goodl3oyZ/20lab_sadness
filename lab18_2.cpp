@@ -1,1 +1,12 @@
-//Modify function overlap() form lab18_1.cpp by using pointers as input arguments.
+#include<iostream>
+using namespace std;
+
+struct Rect{
+	double x,y,w,h;
+};
+
+double overlap(){
+
+
+
+}
