@@ -8,7 +8,9 @@
 using namespace std;
 
 struct student{
-	//Define struct student with four member (name ,id , gender, gpa);
+
+    //Define struct student with four member (name ,id , gender, gpa);
+    
 };
 
 struct course{
@@ -18,28 +20,33 @@ struct course{
 	vector<student *> student_list;
 };
 
-student * findstudent(vector<student> allstudents,int key){ //Correct this line
+student * findstudent(vector<student> allstudents,int key){ //There is something wrong in this line.
 	for(unsigned int i = 0; i < allstudents.size(); i++){
 		if(allstudents[i].id  == key) return &allstudents[i];
 	}
+	return 0;
 }
 
 void printreport(vector<course> allcourses){
 	for(unsigned int i = 0;i < allcourses.size(); i++){
 		cout << "-----------------------------------------------------------------------------\n";
-		cout << "Course:\t\t" << allcourses[i].name << " ("<< allcourses[i].id << ")\n\n";
-		cout << "Lecturers:\t";
+		cout << left << setw(20);
+		cout << "Course:" << allcourses[i].name << " ("<< allcourses[i].id << ")\n\n";
+		cout << left << setw(20);
+		cout << "Lecturers:";
 		for(unsigned int j = 0; j < allcourses[i].lecture_list.size();j++){
 			if(j != 0) cout << ", ";
 			cout << allcourses[i].lecture_list[j];
-		} 
-		cout << "\n\nStudents:\t";
+		}
+		cout << "\n\n";
+		cout << left << setw(20);
+		cout << "Students:";
 		for(unsigned int j = 0; j < allcourses[i].student_list.size();j++){
-			if(j != 0) cout << "\t\t";
-			cout << setw(15) << left << allcourses[i].student_list[j]->name << "\t";
-			cout << allcourses[i].student_list[j]->id << "\t";
-			cout << allcourses[i].student_list[j]->gender << "\t";
-			cout << allcourses[i].student_list[j]->gpa << "\n";
+			if(j != 0) cout << left << setw(20) << " ";
+			cout << left << setw(20) << allcourses[i].student_list[j]->name;
+			cout << left << setw(10) << allcourses[i].student_list[j]->id;
+			cout << left << setw(3) << allcourses[i].student_list[j]->gender;
+			cout << left << setw(5) << setprecision(2) << fixed << allcourses[i].student_list[j]->gpa << "\n";
 		} 
 		
 	}
@@ -56,9 +63,9 @@ int main(){
 	
 	while(getline(student_file,textline)){
 		student s; 
-	
+		
 		//Assign value to the members of struct s;
-	
+
 		allstudents.push_back(s); 		
 	}
 	
@@ -76,14 +83,18 @@ int main(){
 			if(textline == "> Students"){
 				state = 3;
 			}else{
-				//Append lecture_list;
+			
+			    //Append lecture_list;
+			    
 			}			
 		}else{
 			if(textline == "---------------------------------------"){
 				state = 1;
 			}else{
 				student *p = findstudent(allstudents,atof(textline.c_str()));
+				
 				//Append student_list;
+				
 			}
 		}
 	}
