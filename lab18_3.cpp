@@ -64,7 +64,7 @@ int main(){
 	while(getline(student_file,textline)){
 		student s; 
 		
-		//Assign value to the members of struct s;
+		//Use sscanf() to split the value in textline and assign those values to the members of struct s;
 
 		allstudents.push_back(s); 		
 	}
@@ -84,7 +84,7 @@ int main(){
 				state = 3;
 			}else{
 			
-			    //Append lecture_list;
+			    //Append textline to lecture_list[] of the recently added course in allcourses[];
 			    
 			}			
 		}else{
@@ -93,7 +93,7 @@ int main(){
 			}else{
 				student *p = findstudent(allstudents,atof(textline.c_str()));
 				
-				//Append student_list;
+				//Append p to student_list of the recently added course in allcourses[];
 				
 			}
 		}
