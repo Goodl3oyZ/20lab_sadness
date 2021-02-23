@@ -64,7 +64,7 @@ int main(){
 	while(getline(student_file,textline)){
 		student s; 
 		
-		//Use sscanf() to split the value in textline and assign those values to the members of struct s;
+		//Use sscanf() to split the values in textline and assign those values to the members of struct s;
 
 		allstudents.push_back(s); 		
 	}
