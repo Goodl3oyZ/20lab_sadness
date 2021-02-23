@@ -84,7 +84,7 @@ int main(){
 				state = 3;
 			}else{
 			
-			    //Append textline to lecture_list[] of the recently added course in allcourses[];
+			    //Append (push_back) textline to lecture_list[] of the recently added course in allcourses[];
 			    
 			}			
 		}else{
@@ -93,7 +93,7 @@ int main(){
 			}else{
 				student *p = findstudent(allstudents,atof(textline.c_str()));
 				
-				//Append p to student_list of the recently added course in allcourses[];
+				//Append (push_back) p to student_list of the recently added course in allcourses[];
 				
 			}
 		}
